@@ -5,6 +5,9 @@
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (typeof sendHeight === 'function') {
+          setTimeout(sendHeight, 400);
+        }
       }
     });
   });

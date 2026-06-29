@@ -269,7 +269,7 @@ html, body { margin: 0; padding: 0; background: #f9f9f9; }
   .w2a-export-desc strong { color: #fff !important; }
   .w2a-export-list { list-style: none; margin: 0 auto 1.5em; padding: 0; display: inline-block; text-align: left; }
   .w2a-export-list li { padding-left: 1.25em; position: relative; margin-bottom: .4em; font-size: .88em; color: rgba(255,255,255,.92) !important; }
-  .w2a-export-list li::before { content: '✓'; position: absolute; left: 0; font-weight: 700; }
+  .w2a-export-list li::before { content: '\2713'; position: absolute; left: 0; font-weight: 700; }
   .w2a-export-actions { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; justify-content: center; margin-top: auto; }
   .w2a-export .w2a-btn--solid {
     background: #fff !important;
@@ -321,7 +321,9 @@ html, body { margin: 0; padding: 0; background: #f9f9f9; }
   /* WordPress theme overrides — keep colors & centering intact */
   .w2a-block .w2a-section > h2,
   .w2a-block .w2a-video-sec > h2,
-  .w2a-block .w2a-features-sec > h2 {
+  .w2a-block .w2a-features-sec > h2,
+  .w2a-block .w2a-benefits-sec > h2,
+  .w2a-block .w2a-pricing-sec > h2 {
     color: #09b300 !important;
     text-align: center !important;
   }
@@ -341,4 +343,159 @@ html, body { margin: 0; padding: 0; background: #f9f9f9; }
   .w2a-block .w2a-export em {
     color: rgba(255,255,255,.85) !important;
     font-style: italic;
+  }
+
+  /* App benefits */
+  .w2a-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25em;
+    margin-top: 2em;
+  }
+  .w2a-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85em;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.25em 1.35em;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    text-align: left;
+  }
+  .w2a-benefit-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background: #09b300;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .85em;
+  }
+  .w2a-benefit-item p {
+    margin: 0;
+    font-size: .95em;
+    line-height: 1.55;
+    color: #555 !important;
+    text-align: left !important;
+  }
+
+  /* Pricing */
+  .w2a-pricing-main {
+    max-width: 640px;
+    margin: 0 auto 2.5em;
+    background: linear-gradient(135deg, #09b300, #07ace0);
+    border-radius: 10px;
+    padding: 2.25em 2em;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(9,179,0,.2);
+  }
+  .w2a-pricing-main h3 {
+    color: #fff !important;
+    font-size: 2.2em;
+    margin: 0 0 .15em;
+    text-align: center !important;
+  }
+  .w2a-pricing-main .w2a-pricing-period {
+    font-size: 1em;
+    opacity: .92;
+    margin-bottom: 1em;
+  }
+  .w2a-pricing-main p {
+    color: #fff !important;
+    font-size: 1.02em;
+    line-height: 1.6;
+    margin: 0 0 1.5em;
+    text-align: center !important;
+  }
+  .w2a-pricing-main .w2a-btn--solid {
+    background: #fff !important;
+    color: #09b300 !important;
+    border-color: #fff !important;
+  }
+  .w2a-pricing-main .w2a-btn--solid:hover {
+    background: #f0fff0 !important;
+    color: #078a00 !important;
+  }
+  .w2a-pricing-services {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .w2a-pricing-services > h3 {
+    color: #666 !important;
+    text-align: center !important;
+    font-size: 1.15em;
+    margin-bottom: 1.25em;
+  }
+  .w2a-pricing-list {
+    list-style: none;
+    margin: 0 0 1.5em;
+    padding: 0;
+  }
+  .w2a-pricing-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1em;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.1em 1.35em;
+    margin-bottom: .65em;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    text-align: left;
+  }
+  .w2a-pricing-list li span:first-child {
+    flex: 1;
+    color: #555;
+    font-size: .95em;
+    line-height: 1.5;
+  }
+  .w2a-pricing-price {
+    flex-shrink: 0;
+    font-weight: 700;
+    color: #09b300;
+    font-size: 1.05em;
+    white-space: nowrap;
+  }
+  .w2a-pricing-bundle {
+    background: #fff;
+    border: 2px solid #09b300;
+    border-radius: 10px;
+    padding: 1.75em 1.5em;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(9,179,0,.12);
+  }
+  .w2a-pricing-bundle-tag {
+    display: inline-block;
+    background: #e8f9e8;
+    color: #078a00;
+    font-size: .75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: .35em .9em;
+    border-radius: 20px;
+    margin-bottom: .75em;
+  }
+  .w2a-pricing-bundle h3 {
+    color: #09b300 !important;
+    font-size: 2em;
+    margin: 0 0 .5em;
+    text-align: center !important;
+  }
+  .w2a-pricing-bundle p {
+    color: #555 !important;
+    font-size: .98em;
+    line-height: 1.6;
+    margin: 0 0 1.25em;
+    text-align: center !important;
+  }
+  @media (max-width: 700px) {
+    .w2a-benefits-grid { grid-template-columns: 1fr; }
+    .w2a-pricing-list li { flex-direction: column; gap: .35em; }
+    .w2a-pricing-price { align-self: flex-start; }
   }
